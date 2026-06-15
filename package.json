@@ -1,6 +1,6 @@
 {
   "name": "donesignal",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Play a sound when your AI agent, script, build, or workflow finishes.",
   "bin": {
     "donesignal": "./src/index.js",
