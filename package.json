@@ -4,8 +4,7 @@
   "description": "Play a sound when your AI agent, script, build, or workflow finishes.",
   "bin": {
     "donesignal": "./src/index.js",
-    "donesignal-exec": "./src/donesignal-exec.js",
-    "donesignal-shell": "./src/donesignal-shell.js"
+    "donesignal-exec": "./src/donesignal-exec.js"
   },
   "main": "./src/index.js",
   "files": [
