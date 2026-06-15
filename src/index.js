@@ -25,6 +25,10 @@ async function main() {
     process.exit(0);
   }
 
+  // Auto-init AGENTS.md silently (only logs with --verbose)
+  const init = require('./init');
+  init.ensure(args.verbose);
+
   // --play without a command: just play the sound and exit
   if (args.playOnly && (!args.command || args.command.length === 0)) {
     const cfg = config.load(args);

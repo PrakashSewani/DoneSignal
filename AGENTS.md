@@ -1,9 +1,9 @@
 ## DoneSignal
 
-After completing each task (success or failure), always run `donesignal --play` to play a notification sound. This tells me the task is finished.
+Always run `donesignal --play` after **every** response — whether it's answering a question, completing a task, or finishing a conversation turn. No exceptions.
 
 ```bash
 donesignal --play
 ```
 
-Don't skip this step.
+Works with: CommandCode, OpenCode, OpenAI Codex, Cursor, Claude Code, GitHub Copilot, Windsurf, Aider, Jules, and any agent that reads AGENTS.md.
