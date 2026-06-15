@@ -1,0 +1,35 @@
+{
+  "name": "donesignal",
+  "version": "0.1.0",
+  "description": "Play a sound when your AI agent, script, build, or workflow finishes.",
+  "bin": {
+    "donesignal": "./src/index.js",
+    "donesignal-exec": "./src/donesignal-exec.js",
+    "donesignal-shell": "./src/donesignal-shell.js"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "src/",
+    "sounds/"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "prepublishOnly": "node scripts/verify-sounds.js"
+  },
+  "dependencies": {
+    "cosmiconfig": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "sound",
+    "notification",
+    "command-wrapper",
+    "audio",
+    "agent",
+    "done"
+  ],
+  "license": "MIT"
+}
