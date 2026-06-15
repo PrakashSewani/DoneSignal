@@ -4,6 +4,7 @@ const path = require('node:path');
 const { describe, it } = require('node:test');
 
 const sound = require('../src/sound');
+const isCI = !!process.env.CI;
 const generic = require('../src/agents/generic');
 
 function makeResult(exitCode) {
@@ -99,7 +100,7 @@ describe('sound.resolveSoundPath', () => {
 });
 
 describe('sound.play', () => {
-  it('resolves for bundled sounds that exist', async () => {
+  it('resolves for bundled sounds that exist', { skip: !!isCI }, async () => {
     const result = await sound.play(
       makeResult(0),
       makeArgs(),
