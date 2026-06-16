@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const path = require('path');
 const cli = require('./cli');
 const config = require('./config');
 const agent = require('./agent');
@@ -15,6 +16,24 @@ async function main() {
 
   if (args.showVersion) {
     console.log(require('../package.json').version);
+    process.exit(0);
+  }
+
+  if (args.showSounds) {
+    const { execSync } = require('child_process');
+    const soundsDir = path.resolve(__dirname, '..', 'sounds');
+    try {
+      if (process.platform === 'win32') {
+        execSync(`explorer "${soundsDir}"`, { stdio: 'ignore' });
+      } else if (process.platform === 'darwin') {
+        execSync(`open "${soundsDir}"`, { stdio: 'ignore' });
+      } else {
+        execSync(`xdg-open "${soundsDir}"`, { stdio: 'ignore' });
+      }
+    } catch (err) {
+      console.error(`[donesignal] could not open sounds directory: ${err.message}`);
+      console.error(`[donesignal] sounds are located at: ${soundsDir}`);
+    }
     process.exit(0);
   }
 

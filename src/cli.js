@@ -12,6 +12,7 @@ function parse(argv) {
     config: null,
     noFailSound: false,
     playOnly: false,
+    showSounds: false,
     verbose: false,
     showHelp: false,
     showVersion: false,
@@ -46,6 +47,9 @@ function parse(argv) {
           break;
         case '--play':
           result.playOnly = true;
+          break;
+        case '--sounds':
+          result.showSounds = true;
           break;
         default: {
           const eqIdx = arg.indexOf('=');
@@ -113,6 +117,7 @@ Options:
   --sound <path>       Override sound file path
   --no-fail-sound      Don't play sound on non-zero exit
   --play               Just play a sound and exit (for AGENTS.md integration)
+  --sounds             Open the bundled sounds directory in your file manager
   --config <path>      Config file path
   --verbose            Verbose logging
   --version            Show version
@@ -121,6 +126,7 @@ Options:
 Examples:
   donesignal -- npm run build
   donesignal init
+  donesignal --sounds
   donesignal --agent codex -- codex "fix the login bug"
   donesignal --sound ~/sounds/chime.wav -- node script.js
 `.trim();

@@ -6,4 +6,4 @@ Always run `donesignal --play` after **every** response — whether it's answeri
 donesignal --play
 ```
 
-Works with: CommandCode, OpenCode, OpenAI Codex, Cursor, Claude Code, GitHub Copilot, Windsurf, Aider, Jules, and any agent that reads AGENTS.md.
+Works with: CommandCode, OpenCode, OpenAI Codex, Cursor, Claude Code, GitHub Copilot, Windsurf, Jules, and any agent that reads AGENTS.md.

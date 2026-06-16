@@ -67,6 +67,11 @@ describe('cli.parse', () => {
     assert.deepStrictEqual(result.command, ['echo', 'hello']);
   });
 
+  it('parses --sounds flag', () => {
+    const result = cli.parse(['node', 'script.js', '--sounds']);
+    assert.strictEqual(result.showSounds, true);
+  });
+
   it('parses --config flag', () => {
     const result = cli.parse([
       'node', 'script.js',
